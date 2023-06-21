@@ -43,8 +43,20 @@
             <a href="#logout">Logout</a>
         </div>
     </div>
-    <form action="{% url 'user_login' %}" method="post">
+    <form action="{% url 'register' %}" method="post">
         {% csrf_token %}
+        <div class="bodydiv">
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="kullanıcı adınızı giriniz">
+        </div>
+        <div class="bodydiv">
+            <label for="name">Name</label>
+            <input type="name" name="name" id="name" placeholder="adınızı giriniz" required>
+        </div>
+        <div class="bodydiv">
+            <label for="surname">Surname</label>
+            <input type="surname" name="surname" id="surname" placeholder="soyadınızı giriniz" required>
+        </div>
         <div class="bodydiv">
             <label for="email">Email</label>
             <input type="email" name="email" id="email" placeholder="mail adresi giriniz" required>
@@ -54,13 +66,7 @@
             <input type="password" name="password" id="password" placeholder="şifre giriniz">
         </div>
         <div class="bodydiv">
-            <button type="submit">Giriş Yap</button>
-        </div>
-    </form>
-    <form action="{% url 'register' %}" method="post">
-        {% csrf_token %}
-        <div class="bodydiv">
-            <button type="submit">Hesabın yok mu? Kayıt Ol</button>
+            <button type="submit">Kayıt ol</button>
         </div>
     </form>
     

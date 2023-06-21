@@ -2,6 +2,14 @@ from django.db import models
 from django.http import HttpResponse
 # Create your models here.
 
+class User(models.Model):
+    name=models.CharField(max_length=100)
+    surname=models.CharField(max_length=100)
+    email=models.EmailField(unique=True)
+
+    USERNAME_FIELD = 'email'
+
+
 class Author(models.Model):
     name=models.CharField(max_length=100)
     created=models.DateTimeField('created')
