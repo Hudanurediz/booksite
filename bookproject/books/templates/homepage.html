@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomePage</title>
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    <style>
+      body{
+        background-color: #C0C0C0;
+      }
+      h3 {
+        color: aliceblue;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#books">Books</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#about">About</a>
+        <div class="end">
+            <a href="#login">Login</a>
+            <a href="#logout">Logout</a>
+        </div>
+    </div>
+    
+    <h3>Ana sayfa </h3> 
+  </body>
+</html>
