@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    {% load static %}<link rel="stylesheet" href="{% static 'navbar.css' %}">
-
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'button.css' %}">
+    <link rel="stylesheet" href="{% static 'inputs.css' %}">
     <style>
         body{
             background-color: #C0C0C0;
-        }
-        input{
-            background-color: #C0C0C0;
-            height: 20px;
-            width: 20%;
         }
         label{
             text-align: center;
@@ -28,7 +25,11 @@
             text-align: center;
         }
         body form{
-            margin-top: 20%;
+            margin-top: 15%;
+        }
+        .bodydiv2{
+            margin: 10px;
+            text-align: center;
         }
     </style>
 </head>
@@ -46,23 +47,23 @@
     <form action="{% url 'user_login' %}" method="post">
         {% csrf_token %}
         <div class="bodydiv">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="mail adresi giriniz" required>
+            <input type="email" name="email" id="email" class="input" placeholder="mail adresi giriniz" required>
         </div>
         <div class="bodydiv">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="şifre giriniz">
+            <input type="password" name="password" id="password" class="input" placeholder="şifre giriniz">
         </div>
         <div class="bodydiv">
-            <button type="submit">Giriş Yap</button>
+            <button type="submit" class="button-85">Giriş Yap</button>
         </div>
     </form>
-    <form action="{% url 'register' %}" method="post">
+    <form action="{% url 'regpage' %}" method="post">
         {% csrf_token %}
-        <div class="bodydiv">
-            <button type="submit">Hesabın yok mu? Kayıt Ol</button>
+        <div class="bodydiv2">
+            <button type="submit" class="button-85">Hesabın yok mu? Kayıt Ol</button>
         </div>
     </form>
     
 </body>
 </html>
+
+

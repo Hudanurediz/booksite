@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'books.User'  # 'myapp' kısmını kendi uygulama adınıza göre değiştirin
 
 # Application definition
 

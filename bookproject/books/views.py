@@ -26,7 +26,10 @@ def user_login(request):
             messages.error(request, 'Geçersiz kullanıcı adı veya parola.')
     return render(request, 'login.html')
 
-def register(request):
+def regpage(request):
+    return render(request, 'register.html')
+
+def user_register(request):
     if request.method == 'POST':
         username=request.POST["username"]
         email=request.POST["email"]
@@ -36,16 +39,16 @@ def register(request):
         password2=request.POST["password2"]
         if password == password2:
             if User.objects.filter(username=username).exists():
-                return render(request, 'kayitol.html', {'message': 'Username kullanılıyor'})
+                return render(request, 'register.html', {'message': 'Username kullanılıyor'})
             else:
                 if User.objects.filter(email=email).exists():
-                    return render(request, 'kayitol.html', {'message': 'Email kullanılıyor'})
+                    return render(request, 'register.html', {'message': 'Email kullanılıyor'})
                 else:
                     user=User.objects.create_user(username=username,email=email,first_name=first_name,last_name=last_name,password=password)
                     user.save()
                     return render(request, 'login.html')
         else:
-            return render(request, 'kayitol.html', {'message': 'Hatali parola'})
+            return render(request, 'register.html', {'message': 'Hatali parola'})
 
 def logoutview(request):
     logout(request)

@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    {% load static %}<link rel="stylesheet" href="{% static 'navbar.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'button.css' %}">
+    <link rel="stylesheet" href="{% static 'inputs.css' %}">
 
     <style>
         body{
@@ -46,27 +49,25 @@
     <form action="{% url 'register' %}" method="post">
         {% csrf_token %}
         <div class="bodydiv">
-            <label for="username">Username</label>
-            <input type="text" name="username" placeholder="kullanıcı adınızı giriniz">
+            <input type="text" name="username" class="input" placeholder="kullanıcı adınızı giriniz">
         </div>
         <div class="bodydiv">
-            <label for="name">Name</label>
-            <input type="name" name="name" id="name" placeholder="adınızı giriniz" required>
+            <input type="name" name="name" id="name" class="input" placeholder="adınızı giriniz" required>
         </div>
         <div class="bodydiv">
-            <label for="surname">Surname</label>
-            <input type="surname" name="surname" id="surname" placeholder="soyadınızı giriniz" required>
+            <input type="surname" name="surname" id="surname" class="input" placeholder="soyadınızı giriniz" required>
         </div>
         <div class="bodydiv">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="mail adresi giriniz" required>
+            <input type="email" name="email" id="email" class="input" placeholder="mail adresi giriniz" required>
         </div>
         <div class="bodydiv">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="şifre giriniz">
+            <input type="password" name="password" id="password" class="input" placeholder="şifre giriniz">
         </div>
         <div class="bodydiv">
-            <button type="submit">Kayıt ol</button>
+            <input type="password2" name="password2" id="password2" class="input" placeholder="Şifrenizi tekrar girin">
+        </div>
+        <div class="bodydiv">
+            <button type="submit" class="button-85">Kayıt ol</button>
         </div>
     </form>
     
