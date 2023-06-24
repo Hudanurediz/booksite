@@ -33,8 +33,8 @@ def user_register(request):
     if request.method == 'POST':
         username=request.POST["username"]
         email=request.POST["email"]
-        first_name=request.POST["first_name"]
-        last_name=request.POST["last_name"]
+        first_name=request.POST["name"]
+        last_name=request.POST["surname"]
         password=request.POST["password"]
         password2=request.POST["password2"]
         if password == password2:

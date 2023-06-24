@@ -5,8 +5,8 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     name = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
-    email = models.EmailField(unique=True)
-    password = models.CharField(max_length=128)  # Kullanıcı parolasını tutacak alan
+    email = models.EmailField(unique=True,null=True)
+    password = models.CharField(max_length=128,null=True)  # Kullanıcı parolasını tutacak alan
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name', 'surname']
