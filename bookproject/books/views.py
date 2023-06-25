@@ -44,7 +44,7 @@ def user_register(request):
                 if User.objects.filter(email=email).exists():
                     return render(request, 'register.html', {'message': 'Email kullanılıyor'})
                 else:
-                    user=User.objects.create_user(username=username,email=email,first_name=first_name,last_name=last_name,password=password)
+                    user=User.objects.create_user(username=username,email=email,name=first_name,surname=last_name,password=password)
                     user.save()
                     return render(request, 'login.html')
         else:

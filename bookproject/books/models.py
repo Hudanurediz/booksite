@@ -3,13 +3,9 @@ from django.http import HttpResponse
 from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
-    name = models.CharField(max_length=100)
-    surname = models.CharField(max_length=100)
-    email = models.EmailField(unique=True,null=True)
-    password = models.CharField(max_length=128,null=True)  # Kullanıcı parolasını tutacak alan
+    pass
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name', 'surname']
+
 
 class Author(models.Model):
     name=models.CharField(max_length=100)
