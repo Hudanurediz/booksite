@@ -33,8 +33,8 @@ def user_register(request):
     if request.method == 'POST':
         username=request.POST["username"]
         email=request.POST["email"]
-        first_name=request.POST["name"]
-        last_name=request.POST["surname"]
+        first_name=request.POST["first_name"]
+        last_name=request.POST["last_name"]
         password=request.POST["password"]
         password2=request.POST["password2"]
         if password == password2:
@@ -44,7 +44,7 @@ def user_register(request):
                 if User.objects.filter(email=email).exists():
                     return render(request, 'register.html', {'message': 'Email kullanılıyor'})
                 else:
-                    user=User.objects.create_user(username=username,email=email,name=first_name,surname=last_name,password=password)
+                    user=User.objects.create_user(username=username,email=email,first_name=first_name,last_name=last_name,password=password)
                     user.save()
                     return render(request, 'login.html')
         else:
