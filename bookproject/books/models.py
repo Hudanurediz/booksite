@@ -9,10 +9,14 @@ class User(AbstractUser):
 
 
 class Author(models.Model):
+    def __str__(self):
+        return self.name
     name=models.CharField(max_length=100)
     created=models.DateTimeField('created')
 
 class Book(models.Model):
+    def __str__(self):
+        return self.name
     name=models.CharField(max_length=100)
     created=models.DateTimeField('created')
     author=models.ForeignKey(Author,on_delete=models.CASCADE)
